@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"  *ngFor = "let p of users">
+      <ion-back-button defaultHref="/approved/{{p.donation_id}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Send a Message</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<br>
+  <ion-item *ngFor = "let p of users">
+    To: {{p.user_fname}} {{p.user_lname}} <br>
+   
+  </ion-item>
+<br>
+
+  <ion-item>
+     
+    <ion-textarea placeholder="Enter your message..." clearInput value= "" [(ngModel)]="message"></ion-textarea>
+
+    </ion-item>
+  
+    <ion-button shape="round" expand="block" class="ion-padding" color="success" (click)="sendmessage('Success')">Send</ion-button>
+
+    <ion-card> 
+      <ion-item *ngFor ="let l of lpm">
+        Your previous message: {{l.message}}
+      </ion-item>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/donationhistory"></ion-back-button>
+    </ion-buttons>
+   <ion-title> View Message</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content>
+  <br><br>
+
+  <br>
+  <ion-card>
+   
+  <ion-list no-lines class="msgbubble" *ngFor="let om of ownermessage" >  
+    <br>
+   <div class="innermsg-left"> 
+      &nbsp; &nbsp;{{om.message}}
+      <ion-label> <p> &nbsp; &nbsp;{{om.created_at}}</p> 
+      </ion-label>
+    </div>  
+    <ion-avatar >
+      <ion-icon name="checkmark-circle" class="pic"></ion-icon>
+   </ion-avatar> 
+    
+  </ion-list>
+</ion-card>
+   
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "PantryFinder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
