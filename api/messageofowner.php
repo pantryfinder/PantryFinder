@@ -1,4 +1,4 @@
-<?php
+?php
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Credentials: true");
@@ -48,7 +48,27 @@ elseif($postjson['aksi'] == "loadmessage"){
             'donation_id' => $rows['donation_id'],          
             'message' => $rows['message'],
             'created_at' => $rows['created_at'],
-           
+        );
+    }
+   
+    if($query){
+        $result = json_encode(array('success'=>true, 'result'=>$data));
+    }else {
+        $result = json_encode(array('success'=>false));
+     }
+     echo $result;
+}
+
+elseif($postjson['aksi'] == "load_prev"){
+    $data = array();    
+    $query = mysqli_query($mysqli, "SELECT * FROM messages WHERE donation_id = '$postjson[donation_id]' ORDER BY message_id DESC");
+
+    while($rows = mysqli_fetch_array($query)){
+        $data[]= array(
+            'message_id' => $rows['message_id'],
+            'donation_id' => $rows['donation_id'],
+            'message' => $rows['message'],
+            'created_at' => $rows['created_at'],
         );
     }
    
