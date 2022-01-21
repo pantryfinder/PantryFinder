@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start"  *ngFor = "let p of users">
@@ -19,10 +18,11 @@
     </ion-refresher-content>
   </ion-refresher>
 
+  
+
 <br>
   <ion-item *ngFor = "let p of users">
     To: {{p.user_fname}} {{p.user_lname}} <br>
-
    
   </ion-item>
 
@@ -31,11 +31,9 @@
     <ion-textarea placeholder="Enter your message..." clearInput value= "" [(ngModel)]="message"></ion-textarea>
     </ion-item>
     <ion-button shape="round" expand="block" class="ion-padding" color="success" (click)="sendmessage('Success')">Send</ion-button>
-<br>
-
 
     <ion-card> 
-      <ion-item *ngFor ="let l of load">
+      <ion-item *ngFor ="let l of lpm">
         <ion-label no-lines>
           <div class="innermsg-right"> 
             <ion-label text-wrap> {{l.message}} </ion-label>
@@ -46,7 +44,4 @@
       </ion-item>
     </ion-card>
 
-
-    
-   
 </ion-content>
