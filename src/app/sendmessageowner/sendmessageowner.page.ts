@@ -15,16 +15,16 @@ export class SendmessageownerPage implements OnInit {
   ownermessages = []
   user_id: number;
   users = []
-  lpm =[]
+  load = []
   pantry: any = [];
   pantry_id: number;
   donation_id: number;
   statusofdonate: string ="";
   user_fname: string ="";
   user_lname: string ="";
-
- message: string = "";
- disabledButton;
+  message_id: number;
+  message: string = "";
+  disabledButton;
   
   datastorage: any;
 
@@ -43,18 +43,17 @@ export class SendmessageownerPage implements OnInit {
     this.actRoute.params.subscribe((data: any)=>{
       console.log(data);
       this.donation_id = data.donation_id;
-      
+
       if(this.donation_id!=0){
         this.users = [];
         this.loaddonors();
-        this.lpm =[];
-        this.loadpreviousmessage();
-        
+        this.load = [];
+        this.lpm();
       }
-     
-    });
+    }); 
   }
 
+  
 
   async loaddonors(){
     const load = await this.loadCtrl.create({
@@ -90,6 +89,45 @@ export class SendmessageownerPage implements OnInit {
          
     });
   }
+
+  async lpm(){
+    const load = await this.loadCtrl.create({
+      message : "Loading....",
+     });
+    
+    
+    return new Promise(resolve => {
+      let data = {
+        aksi: 'load_prev',
+        donation_id: this.donation_id
+      }
+
+      this.accsPrvdrs.postData(data, 'messageofowner.php').subscribe((res:any)=>{
+        if(res.success==true){
+          for(let datas of res.result){
+            this.load.push(datas);
+            console.log(datas);
+            load.dismiss();
+          }
+      
+        }else{
+        load.dismiss();
+        
+        this.presentToast(res.msg);
+        }
+    },(err)=>{
+      load.dismiss();
+      
+      this.presentToast("Cannot Load Data"); 
+      }) 
+         
+    });
+  }
+
+ 
+
+
+
 
   async sendmessage(a){
     
@@ -129,8 +167,6 @@ export class SendmessageownerPage implements OnInit {
                   this.disabledButton = false;
                   console.log(res);
                   this.presentToast(res.msg);
-                //this.sendsms();
-                //this.router.navigate(['/viewcomments/']);
                 }else {
                   alert.dismiss();
                   this.disabledButton = false;
@@ -155,8 +191,6 @@ export class SendmessageownerPage implements OnInit {
   } 
 
 
-  
-  
   async presentToast(a){
     const toast = await this.toastCtrl.create({
       message : a,
@@ -184,39 +218,20 @@ export class SendmessageownerPage implements OnInit {
     await alert.present();
   }
 
-  async loadpreviousmessage(){
-    const load = await this.loadCtrl.create({
-      message : "Loading....",
-     });
-    
-    
-    return new Promise(resolve => {
-      let data = {
-        aksi: 'lprevmessage',
-        donation_id: this.donation_id,
-       
-      }
 
-      this.accsPrvdrs.postData(data, 'proses_api.php').subscribe((res:any)=>{
-        if(res.success==true){
-          for(let datas of res.result){
-            this.lpm.push(datas);
-            console.log(datas);
-            load.dismiss();
-          }
-      
-        }else{
-        load.dismiss();
-        
-        this.presentToast(res.msg);
-        }
-    },(err)=>{
-      load.dismiss();
-      
-      this.presentToast("Cannot Load Data"); 
-      }) 
-         
+ 
+  
+  async doRefresh(event){
+    const loader = await this.loadCtrl.create({
+      message: 'Please wait....',
     });
+      loader.present();
+      //this.loads=[];
+     
+     // this.loadpreviousmessage();
+
+      event.target.complete();
+      loader.dismiss();
   }
 
 }
