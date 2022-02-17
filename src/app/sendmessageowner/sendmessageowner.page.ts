@@ -227,4 +227,8 @@ export class SendmessageownerPage implements OnInit {
       loader.dismiss();
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 78285871255b60813a9c100986130daff7d4909c
