@@ -14,14 +14,6 @@
 //define('DB_USER', 'sql6463716');
 //define('DB_PASSWORD', 'Nda67yQU21');
 //define('DB_HOST', 'sql6.freesqldatabase.com');
-<<<<<<< HEAD
-=======
-
-define('DB_NAME', 'sql6473472');
-define('DB_USER', 'sql6473472');
-define('DB_PASSWORD', 'lkaqcHULVz');
-define('DB_HOST', 'sql6.freemysqlhosting.net');
->>>>>>> 78285871255b60813a9c100986130daff7d4909c
 
 //define('DB_NAME', 'pantryfinder');
 //define('DB_USER', 'root');
