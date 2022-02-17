@@ -19,7 +19,7 @@ export class SearchPage implements OnInit {
   pantry_id: number;
   pantry_name: string;
   phone_number: string;
-  list_of_items: string;
+ // list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;
@@ -34,6 +34,18 @@ export class SearchPage implements OnInit {
   cat1 = []
   cat2 = []
   cat3 = []
+  cat4 = []
+  cat5 = []
+  cat6 = []
+  cat7 = []
+
+  noodles: string;
+  delata: string;
+  vegetables: string;
+  fruits:string;
+  medicines: string;
+  hygiene_kits: string;
+  clothes: string;
 
   datastorage: any;
 
@@ -46,7 +58,7 @@ export class SearchPage implements OnInit {
       this.datastorage = res;
       this.users = [];
        this.loadUser();
-      
+     
       
     });
     this.pantry_id;
@@ -64,13 +76,20 @@ export class SearchPage implements OnInit {
     this.storage.get('storage_xxx').then((res)=>{
       console.log(res);
       this.datastorage = res;
-        this.cat1 =[];
-        this.category1();
-        this.cat2=[];
-        this.category2();
-        this.cat3=[];
-        this.category3();
-      
+      this.cat1= [];
+      this.category1();
+      this.cat2= [];
+      this.category2();
+      this.cat3=[];
+      this.category3();
+      this.cat4=[];
+      this.category4();
+      this.cat5=[];
+      this.category5();
+      this.cat6=[];
+      this.category6();
+      this.cat7=[];
+      this.category7();
     });
   }
 
@@ -79,7 +98,6 @@ export class SearchPage implements OnInit {
       message : "Loading....",
      });
     
-    
     return new Promise(resolve => {
       let data = {
         aksi: 'search_communitypantry',
@@ -87,13 +105,12 @@ export class SearchPage implements OnInit {
         pantry_id: this.pantry_id,
       }
 
-      this.accsPrvdrs.postData(data, 'proses_api.php').subscribe((res:any)=>{
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
         if(res.success==true){
           for(let datas of res.result){
             this.users.push(datas);
             load.dismiss();
           }
-      
         }else{
         load.dismiss();
         
@@ -122,7 +139,7 @@ export class SearchPage implements OnInit {
         pantry_id: this.pantry_id,
       }
 
-      this.accsPrvdrs.postData(data, 'proses_api.php').subscribe((res:any)=>{
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
         if(res.success==true){
           for(let datas of res.result){
             this.cat1.push(datas);
@@ -158,7 +175,7 @@ export class SearchPage implements OnInit {
         pantry_id: this.pantry_id,
       }
 
-      this.accsPrvdrs.postData(data, 'proses_api.php').subscribe((res:any)=>{
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
         if(res.success==true){
           for(let datas of res.result){
             this.cat2.push(datas);
@@ -194,10 +211,154 @@ export class SearchPage implements OnInit {
         pantry_id: this.pantry_id,
       }
 
-      this.accsPrvdrs.postData(data, 'proses_api.php').subscribe((res:any)=>{
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
         if(res.success==true){
           for(let datas of res.result){
             this.cat3.push(datas);
+            console.log(datas);
+            load.dismiss();
+          }
+      
+        }else{
+        load.dismiss();
+        
+        this.presentToast(res.msg);
+        }
+    },(err)=>{
+      load.dismiss();
+      
+      this.presentToast("Cannot Load Data"); 
+       
+      }) 
+         
+    });
+  }
+
+  async category4(){
+    const load = await this.loadingCtrl.create({
+      message : "Loading....",
+     });
+    
+    
+    return new Promise(resolve => {
+      let data = {
+        aksi: 'search_category4',
+        user_id: this.user_id,
+        pantry_id: this.pantry_id,
+      }
+
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
+        if(res.success==true){
+          for(let datas of res.result){
+            this.cat4.push(datas);
+            console.log(datas);
+            load.dismiss();
+          }
+      
+        }else{
+        load.dismiss();
+        
+        this.presentToast(res.msg);
+        }
+    },(err)=>{
+      load.dismiss();
+      
+      this.presentToast("Cannot Load Data"); 
+       
+      }) 
+         
+    });
+  }
+
+  async category5(){
+    const load = await this.loadingCtrl.create({
+      message : "Loading....",
+     });
+    
+    
+    return new Promise(resolve => {
+      let data = {
+        aksi: 'search_category5',
+        user_id: this.user_id,
+        pantry_id: this.pantry_id,
+      }
+
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
+        if(res.success==true){
+          for(let datas of res.result){
+            this.cat5.push(datas);
+            console.log(datas);
+            load.dismiss();
+          }
+      
+        }else{
+        load.dismiss();
+        
+        this.presentToast(res.msg);
+        }
+    },(err)=>{
+      load.dismiss();
+      
+      this.presentToast("Cannot Load Data"); 
+       
+      }) 
+         
+    });
+  }
+
+  async category6(){
+    const load = await this.loadingCtrl.create({
+      message : "Loading....",
+     });
+    
+    
+    return new Promise(resolve => {
+      let data = {
+        aksi: 'search_category6',
+        user_id: this.user_id,
+        pantry_id: this.pantry_id,
+      }
+
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
+        if(res.success==true){
+          for(let datas of res.result){
+            this.cat6.push(datas);
+            console.log(datas);
+            load.dismiss();
+          }
+      
+        }else{
+        load.dismiss();
+        
+        this.presentToast(res.msg);
+        }
+    },(err)=>{
+      load.dismiss();
+      
+      this.presentToast("Cannot Load Data"); 
+       
+      }) 
+         
+    });
+  }
+
+  async category7(){
+    const load = await this.loadingCtrl.create({
+      message : "Loading....",
+     });
+    
+    
+    return new Promise(resolve => {
+      let data = {
+        aksi: 'search_category7',
+        user_id: this.user_id,
+        pantry_id: this.pantry_id,
+      }
+
+      this.accsPrvdrs.postData(data, 'searchcategories.php').subscribe((res:any)=>{
+        if(res.success==true){
+          for(let datas of res.result){
+            this.cat7.push(datas);
             console.log(datas);
             load.dismiss();
           }

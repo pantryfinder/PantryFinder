@@ -10,7 +10,7 @@ export interface lianmap {
   pantry_name: string;
   user_fname: string;
   user_lname: string;
-  list_of_items: string;
+  //list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;
@@ -19,7 +19,13 @@ export interface lianmap {
   close_time: string;
   status: string;
   
- 
+  //noodles: string;
+  //delata: string;
+  //vegetables: string;
+  //fruits:string;
+ // medicines: string;
+  //hygiene_kits: string;
+  //clothes: string;
  
  }
  
@@ -29,8 +35,8 @@ export interface lianmap {
 })
 export class LianmapService {
 
-  private url = 'http://192.168.18.73/pantryfinder/api/map.php'
-
+  private url = 'http://139.59.182.21/pantryfinder/api/map.php'
+ //private url = 'http://localhost/pantryfinder/api/map.php'
   constructor(private http: HttpClient) { }
 
   getAllmap(): Observable<lianmap[]>{

@@ -29,7 +29,13 @@ export class MapPage {
   caseStatus;
   maplian: any = [];
 
- 
+  noodles: string="";
+  delata: string="";
+  vegetables: string="";
+  fruits:string="";
+  medicines: string="";
+  hygiene_kits: string="";
+  clothes: string="";
 
  constructor(
   private geolocation: Geolocation,
@@ -47,7 +53,7 @@ export class MapPage {
 showMap(){
   this.map = new Map('map').setView([ 14.035020, 120.652878], 12);
   var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> from Pantry Finder'
+             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> from PantryFinder'
         });
      osm.addTo(this.map);
    
@@ -93,12 +99,14 @@ showMap(){
         //  .bindPopup(marker.title+marker.image);
         .bindPopup(`<center>
                       <p >
-                      <strong> ${marker.pantry_name} <br>
+                      <strong><b>${marker.pantry_name} </b><br>
                       ${marker.street_address}, ${marker.barangay}, ${marker.municipality}, ${marker.province}</strong> <br>
                      <strong> Pantry Owner: </strong> ${marker.user_fname} ${marker.user_lname}<br>
-                     <strong> List of Items: </strong>${marker.list_of_items}<br>
-                      <strong> Schedule: </strong> ${marker.open_time} AM to ${marker.close_time} PM <br>
-                     <strong> Status: </strong>${marker.status}
+                     
+                      <strong> Schedule: </strong> ${marker.open_time} to ${marker.close_time} <br>
+                     <strong> Status: </strong>${marker.status} <br>
+                   
+             
                     </p>
                    
                     <br/>

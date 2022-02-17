@@ -5,7 +5,8 @@ import 'rxjs/add/operator/timeout';
 
 @Injectable()
 export class AccessProviders {
-    server: string = 'http://192.168.18.73/pantryfinder/api/';
+server: string = 'http://139.59.182.21/pantryfinder/api/';
+   //server: string = 'http://localhost/pantryfinder/api/';
  //pantryfinder.atwebpages.com/api/
     
   constructor(

@@ -21,7 +21,7 @@ export class ListofpantryPage implements OnInit {
   pantry_id: number;
   pantry_name: string;
   phone_number: string;
-  list_of_items: string;
+ // list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;

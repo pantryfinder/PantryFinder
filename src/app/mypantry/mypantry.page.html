@@ -46,7 +46,7 @@
       
         &nbsp; &nbsp;<ion-icon name="call-outline"></ion-icon> Contact Number: {{pantry.user_contact}} <br>
         
-        &nbsp; &nbsp; <ion-icon name="list-outline"></ion-icon>
+  <!--&nbsp; &nbsp; <ion-icon name="list-outline"></ion-icon>
           <ion-chip *ngIf="pantry.category_1!=0" shape="round" expand="block" class="ion-padding" color="success">Foods</ion-chip>
           <ion-chip *ngIf="pantry.category_1==0" shape="round" expand="block" class="ion-padding" disabled="true">Foods</ion-chip>
     
@@ -55,9 +55,22 @@
     
           <ion-chip *ngIf="pantry.category_3!=0" shape="round" expand="block" class="ion-padding" color="success">Medicine</ion-chip>
           <ion-chip *ngIf="pantry.category_3==0" shape="round" expand="block" class="ion-padding" disabled="true">Medicine</ion-chip>
+  -->
+
+ 
+    <ion-icon name="list-outline"></ion-icon>   &nbsp;
+   
+    <ion-chip *ngIf="pantry.noodles==1" shape="round" expand="block" class="ion-padding" color="success">Noodles</ion-chip>      
+    <ion-chip *ngIf="pantry.delata==1" shape="round" expand="block" class="ion-padding" color="success">De Lata</ion-chip>     
+    <ion-chip *ngIf="pantry.vegetables==1" shape="round" expand="block" class="ion-padding" color="success">Vegetables</ion-chip>
     
+    <ion-chip *ngIf="pantry.fruits==1" shape="round" expand="block" class="ion-padding" color="success">Fruits</ion-chip>
+    <ion-chip *ngIf="pantry.medicines==1" shape="round" expand="block" class="ion-padding" color="success">Medicine</ion-chip>
+    <ion-chip *ngIf="pantry.hygiene_kits==1" shape="round" expand="block" class="ion-padding" color="success">Hygiene Kits</ion-chip>
+    <ion-chip *ngIf="pantry.clothes==1" shape="round" expand="block" class="ion-padding" color="success">Clothes</ion-chip>
+
  <br>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{pantry.list_of_items}} <ion-icon color="success" name="create-outline"(click)="updatePantry(pantry.pantry_id)"></ion-icon> <br>
+        <!--  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{pantry.list_of_items}} <br>-->
         &nbsp; &nbsp;<ion-icon name="location-outline"></ion-icon> Address: {{pantry.street_address}} {{pantry.barangay}} {{pantry.municipality}} {{pantry.province}}  <br>
       <!--  &nbsp; &nbsp;<ion-icon name="location-outline"></ion-icon> Region: {{pantry.region}} <br>-->
         &nbsp; &nbsp;<ion-icon name="call-outline"></ion-icon> GCash Number: {{pantry.gcash_number}} <br>

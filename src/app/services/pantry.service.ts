@@ -7,7 +7,7 @@ export interface community_pantry {
   pantry_id: string;
   pantry_name: string; 
   phone_number: string;
-  list_of_items: string;
+ // list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;
@@ -24,9 +24,9 @@ export interface community_pantry {
 })
 export class PantryService {
 
-  private url = 'http://192.168.18.73/pantryfinder/api/viewpantry.php/'
+private url = 'http://139.59.182.21/pantryfinder/api/viewpantry.php/'
 
-
+  //private url = 'http://localhost/pantryfinder/api/viewpantry.php/'
   constructor(private http: HttpClient) { }
 
   getAllpantry(){

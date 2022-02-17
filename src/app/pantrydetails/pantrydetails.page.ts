@@ -26,7 +26,7 @@ export class PantrydetailsPage implements OnInit {
   pantry_id: number;
   pantry_name: string;
   user_contact: string;
-  list_of_items: string;
+  
   street_address: string;
   barangay: string;
   municipality: string;
@@ -41,12 +41,26 @@ export class PantrydetailsPage implements OnInit {
   name = [];
   maplian: any = [];
   created_at: any;
-  category_1:string ="";
-  category_2: string ="";
-  category_3: string ="";
- open_time: string;
- close_time: string;
- pscomments=[]
+  //list_of_items: string;
+  noodles: string="";
+  delata: string="";
+  vegetables: string="";
+  fruits:string="";
+  medicines: string="";
+  hygiene_kits: string="";
+  clothes: string="";
+
+  //noodles:number;
+  //delata: number;
+  //vegetables: number;
+  //fruits:number;
+  //medicines: number;
+  //hygiene_kits: number;
+ // clothes: number;
+
+  open_time: string;
+  close_time: string;
+  pscomments=[]
   segmentValue= '1';
   numberofdonor: []
  
@@ -203,10 +217,14 @@ export class PantrydetailsPage implements OnInit {
      this.accsPrvdrs.postData(body, 'proses_api.php').subscribe((res:any)=>{
        this.pantry_name = res.result.pantry_name;
        this.user_contact = res.result.user_contact;
-       this.category_1 = res.result.category_1;
-       this.category_2 = res.result.category_2;
-       this.category_3 = res.result.category_3;
-       this.list_of_items = res.result.list_of_items;
+       this.noodles = res.result.noodles;
+       this.delata = res.result.delata;
+       this.vegetables = res.result.vegetables;
+       this.fruits = res.result.fruits;
+       this.medicines = res.result.medicines;
+       this.hygiene_kits = res.result.hygiene_kits;
+       this.clothes = res.result.clothes;
+      // this.list_of_items = res.result.list_of_items;
        this.street_address = res.result.street_address;
        this.barangay = res.result.barangay;
        this.municipality = res.result.municipality;

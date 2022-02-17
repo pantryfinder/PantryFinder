@@ -22,14 +22,14 @@ while($row = mysqli_fetch_array($result))
                                 "user_id"   => $row[1],
                                 "pantry_name"   => $row[2],
                                 "phone_number"   => $row[3],
-                                "list_of_items"   => $row[4],
-                                "street_address"   => $row[5],
-                                "barangay"   => $row[6],
-                                "municipality"   => $row[7],
-                                "province"   => $row[8],
-                                "email"   => $row[9],
-                                "gcash_number"   => $row[10],                              
-                                "status"   => $row[11] 
+                               // "list_of_items"   => $row[4],
+                                "street_address"   => $row[4],
+                                "barangay"   => $row[5],
+                                "municipality"   => $row[6],
+                                "province"   => $row[7],
+                                "email"   => $row[8],
+                                "gcash_number"   => $row[9],                              
+                                "status"   => $row[10] 
                             ));
 }
 echo json_encode($response);

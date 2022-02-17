@@ -6,15 +6,18 @@ header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, Content-Type, Authorization, Accept, X-Requested-With, x-xsrf-token");
 header("Content-Type: application/json; charset=UTF-8");
 
-define('DB_NAME', 'sql6463716');
-define('DB_USER', 'sql6463716');
-define('DB_PASSWORD', 'Nda67yQU21');
-define('DB_HOST', 'sql6.freesqldatabase.com');
+//define('DB_NAME', 'sql6463716');
+//define('DB_USER', 'sql6463716');
+//define('DB_PASSWORD', 'Nda67yQU21');
+//define('DB_HOST', 'sql6.freesqldatabase.com');
 
 //define('DB_NAME', 'pantryfinder');
 //define('DB_USER', 'root');
 //define('DB_PASSWORD', '');
 //define('DB_HOST', 'localhost');
+
+include "config.php";
+
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 

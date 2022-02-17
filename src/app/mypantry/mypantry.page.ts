@@ -43,7 +43,7 @@ export class MypantryPage implements OnInit {
     pantry_id: number;
     pantry_name: string;
     phone_number: string;
-    list_of_items: string;
+   // list_of_items: string;
     street_address: string;
     barangay: string;
     municipality: string;
@@ -53,9 +53,14 @@ export class MypantryPage implements OnInit {
     gcash_number: string;
     category: string;
     status: string;
-    category_1:string ="";
-    category_2: string ="";
-    category_3: string ="";
+    noodles: string="";
+    delata: string="";
+    vegetables: string="";
+    fruits:string="";
+    medicines: string="";
+    hygiene_kits: string="";
+    clothes: string="";
+  
     disabledButton;
 
   ngOnInit() {

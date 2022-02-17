@@ -47,8 +47,7 @@ elseif($postjson['aksi'] == "loadmessage"){
             'message_id' => $rows['message_id'],           
             'donation_id' => $rows['donation_id'],          
             'message' => $rows['message'],
-            'created_at' => $rows['created_at'],
-           
+            'created_at' => $rows['created_at']
         );
     }
    

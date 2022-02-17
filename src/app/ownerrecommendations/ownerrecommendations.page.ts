@@ -17,7 +17,7 @@ export class OwnerrecommendationsPage implements OnInit {
   pantry_id: number;
   pantry_name: string;
   user_contact: string;
-  list_of_items: string;
+  //list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;

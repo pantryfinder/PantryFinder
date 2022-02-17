@@ -47,3 +47,16 @@ ion-toolbar {
 
     }
 
+    .color1{
+        --background: transparent;
+        --background: rgba(255, 255, 255, 0.253);
+        border-radius: 5px;
+        align-items: center;
+    }
+
+    .left{
+      
+        float: left;
+        text-align: left;
+    }
+    

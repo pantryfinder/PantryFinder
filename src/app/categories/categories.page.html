@@ -9,10 +9,10 @@
 </ion-header>
 
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <ion-row>
     
-    <ion-label class ="ion-text-center"> &nbsp; Recommended Pantries for you to donate:<br></ion-label>
+    <h1 class ="ion-text-center"> &nbsp; <b>Recommended Pantries for you to donate:</b><br></h1>
 
     <ion-col size="12" *ngFor="let r of recommends | filter:recom" class ="ion-text-center">
      
@@ -22,7 +22,7 @@
         <ion-icon name="close-circle" slot="icon-only"></ion-icon>
       </ion-button> -->
 
-      <ion-card-content>  
+      <ion-card-content >  
        
         <ion-item class="color">
           <ion-avatar slot="start">
@@ -30,19 +30,42 @@
               {{r.pantry_name.substring(0, 1).toUpperCase()}}
             </div>
           </ion-avatar>
-          <h1>{{r.pantry_name}}</h1> <br>
+          <h1><b>{{r.pantry_name}}</b></h1> 
        </ion-item>
-  
-        <ion-item class="color"> 
-          {{'Pantry Owner: ' + r.user_fname +  ' ' + r.user_lname }} <br>       
-          {{ ' This pantry need the following items: ' +  r.list_of_items}} <br>
-          {{'Address: ' + r.barangay  + ', ' + r.municipality + ', ' + r.province}} <br>
-          {{' Schedule: ' + r.open_time + ' to ' + r.close_time }} <br><br>
-         
-            <!--{{'Status: ' + p.status }}
-             {{'Phone Number: ' + p.phone_number }} <br>--> <br>         
-             
-          </ion-item>  
+    
+        <ion-item class="color1"> 
+          <h2 class="left">Pantry Owner: {{r.user_fname +  ' ' + r.user_lname }}</h2>
+                
+        </ion-item> 
+
+        <ion-item class="color1"> 
+          <h2 class="left">Address: {{r.barangay  + ', ' + r.municipality + ', ' + r.province}}</h2>
+        </ion-item>  
+
+        <ion-item class="color1"> 
+          <ion-label class="left">Schedule: {{r.open_time + ' to ' + r.close_time }}</ion-label>
+        </ion-item>  
+
+        <ion-item class="color1"> 
+          <ion-label class="left">This pantry need the following items:</ion-label>
+        </ion-item>  
+
+
+           
+       <ion-list-header lines="none" class="color1">
+       
+       <ion-chip *ngIf="r.noodles==1" shape="round" expand="block" class="ion-padding" >Noodles</ion-chip>      
+       <ion-chip *ngIf="r.delata==1" shape="round" expand="block" class="ion-padding" >De Lata</ion-chip>     
+       <ion-chip *ngIf="r.vegetables==1" shape="round" expand="block" class="ion-padding" >Vegetables</ion-chip>
+       <ion-chip *ngIf="r.fruits==1" shape="round" expand="block" class="ion-padding" >Fruits</ion-chip>
+      </ion-list-header>
+      <ion-list-header  lines="none" class="color1">
+       <ion-chip *ngIf="r.medicines==1" shape="round" expand="block" class="ion-padding" >Medicine</ion-chip>
+       <ion-chip *ngIf="r.hygiene_kits==1" shape="round" expand="block" class="ion-padding" >Hygiene Kits</ion-chip>
+       <ion-chip *ngIf="r.clothes==1" shape="round" expand="block" class="ion-padding">Clothes</ion-chip>
+      </ion-list-header>
+       
+
           <ion-button shape = "round" expand="full" expand="full" (click)="login()" color="success">
             <ion-icon name="heart-circle-outline" > </ion-icon> Donate
            </ion-button>

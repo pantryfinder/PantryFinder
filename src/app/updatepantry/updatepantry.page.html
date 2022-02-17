@@ -22,26 +22,39 @@
 </ion-item>
 
 &nbsp;  <ion-label position="floating">Category</ion-label>
+
 <ion-item>
-  <ion-checkbox checked="false" [(ngModel)]="category_1"></ion-checkbox>
-  <ion-label>  &nbsp;&nbsp; Food </ion-label>
+  <ion-checkbox checked ="false" [(ngModel)]="noodles"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; Noodles </ion-label>
 </ion-item>
 
 <ion-item>
-  <ion-checkbox  [(ngModel)]="category_2"></ion-checkbox>
-  <ion-label>  &nbsp;&nbsp; Clothes </ion-label>  
+  <ion-checkbox checked ="false" [(ngModel)]="delata"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; De Lata </ion-label>  
 </ion-item>
 
 <ion-item>
-  <ion-checkbox [(ngModel)]="category_3"></ion-checkbox>
-  <ion-label>  &nbsp;&nbsp; Medicine </ion-label>
+  <ion-checkbox [(ngModel)]="vegetables"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; Vegetables </ion-label>
+</ion-item>
+<ion-item>
+  <ion-checkbox [(ngModel)]="fruits"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; Fruits </ion-label>
 </ion-item>
 
-
+<ion-item>
+  <ion-checkbox [(ngModel)]="medicines"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; Medicines </ion-label>  
+</ion-item>
 
 <ion-item>
-  <ion-label position="floating">List of Items</ion-label>
-  <ion-input clearInput value="" [(ngModel)]="list_of_items"></ion-input>
+  <ion-checkbox [(ngModel)]="hygiene_kits"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; Hygiene Kits </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-checkbox [(ngModel)]="clothes"></ion-checkbox>
+  <ion-label>  &nbsp;&nbsp; Clothes </ion-label>
 </ion-item>
 
 <ion-item>
@@ -94,7 +107,7 @@
   </ion-select>
 </ion-item>
 
-<ion-button shape="round" expand="full" class="ion-padding" color="success" (click)="crudAction('Updated')" [disabled]="disabledButton">Update</ion-button>
+<ion-button shape="round" expand="full" class="ion-padding" color="success" (click)="crudAction('Updated Successfully')" [disabled]="disabledButton">Update</ion-button>
 <!-- <ion-button shape="round" expand="full" class="ion-padding" color="success" 
 (click)="crudAction()" [disabled]="disabledButton">Close Pantry</ion-button> -->
 <br>

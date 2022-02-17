@@ -114,12 +114,20 @@
           Status: <ion-badge color="success">{{p.status}}</ion-badge><br>
           {{'Contact Number: ' + p.user_contact}} <br>
           <ion-label text-wrap>
-        List of Items:   <b> {{p.list_of_items}} </b>
+       <!-- List of Items:   <b> {{p.list_of_items}} </b>-->
           </ion-label>
           {{'Gcash Number: ' + p.gcash_number }} <br>
-          {{p.open_time + ' to ' + p.close_time   }} <br>
-      
-        
+          {{'Schedule: ' + p.open_time + ' to ' + p.close_time   }} <br>
+          {{ 'List of Items:'}} <br>
+         
+            <ion-chip *ngIf="p.noodles==1" shape="round" expand="block" class="ion-padding" >Noodles</ion-chip>      
+            <ion-chip *ngIf="p.delata==1" shape="round" expand="block" class="ion-padding" >De Lata</ion-chip>     
+            <br><ion-chip *ngIf="p.vegetables==1" shape="round" expand="block" class="ion-padding" >Vegetables</ion-chip>
+            <ion-chip *ngIf="p.fruits==1" shape="round" expand="block" class="ion-padding" >Fruits</ion-chip>
+            <br> <ion-chip *ngIf="p.medicines==1" shape="round" expand="block" class="ion-padding" >Medicine</ion-chip>
+            <ion-chip *ngIf="p.hygiene_kits==1" shape="round" expand="block" class="ion-padding" >Hygiene Kits</ion-chip>
+            <ion-chip *ngIf="p.clothes==1" shape="round" expand="block" class="ion-padding">Clothes</ion-chip>
+         
           </div>
        
         <ion-button  (click)="p.showMore = !p.showMore" fill="clear" color="success">Show <span [innerHtml]="p.showMore ? ' less' : ' More... '">  </span></ion-button>

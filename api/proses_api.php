@@ -82,11 +82,16 @@ elseif($postjson['aksi'] == "load_pantry"){
             'pantry_id'    => $rows['pantry_id'],
             'pantry_name'     => $rows['pantry_name'],
             'user_contact' => $rows['user_contact'],
-            'category_1' => $rows['category_1'],
-            'category_2' => $rows['category_2'],
-            'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+            'noodles' => $rows['noodles'],
+            'delata' => $rows['delata'],
+            'vegetables' => $rows['vegetables'],
+            'fruits' => $rows['fruits'],
+            'medicines' => $rows['medicines'],
+            'hygiene_kits' => $rows['hygiene_kits'],
+            'clothes' => $rows['clothes'],
             'street_address' => $rows['street_address'],
+            
+         //   'list_of_items' => $rows['list_of_items'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
             'province' => $rows['province'],
@@ -115,10 +120,15 @@ elseif($postjson['aksi'] == "load_mypantry"){
             'pantry_id' => $rows['pantry_id'],
             'pantry_name'     => $rows['pantry_name'],
             'user_contact' => $rows['user_contact'],
-            'category_1' => $rows['category_1'],
-            'category_2' => $rows['category_2'],
-            'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+            'noodles' => $rows['noodles'],
+            'delata' => $rows['delata'],
+            'vegetables' => $rows['vegetables'],
+            'fruits' => $rows['fruits'],
+            'medicines' => $rows['medicines'],
+            'hygiene_kits' => $rows['hygiene_kits'],
+            'clothes' => $rows['clothes'],
+           
+          //  'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -149,7 +159,14 @@ elseif($postjson['aksi'] == "load_communitypantry"){
             'user_lname'    => $rows['user_lname'],
             'pantry_name'     => $rows['pantry_name'],
             'user_contact' => $rows['user_contact'],
-            'list_of_items' => $rows['list_of_items'],
+            'noodles' => $rows['noodles'],
+            'delata' => $rows['delata'],
+            'vegetables' => $rows['vegetables'],
+            'fruits' => $rows['fruits'],
+            'medicines' => $rows['medicines'],
+            'hygiene_kits' => $rows['hygiene_kits'],
+            'clothes' => $rows['clothes'],
+          //  'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -182,10 +199,15 @@ elseif($postjson['aksi'] == "search_communitypantry"){
             'user_lname'    => $rows['user_lname'],
             'pantry_name'     => $rows['pantry_name'],
             'user_contact' => $rows['user_contact'],
-            'category_1' => $rows['category_1'],
-            'category_2' => $rows['category_2'],
-            'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+            'noodles' => $rows['noodles'],
+            'delata' => $rows['delata'],
+            'vegetables' => $rows['vegetables'],
+            'fruits' => $rows['fruits'],
+            'medicines' => $rows['medicines'],
+            'hygiene_kits' => $rows['hygiene_kits'],
+            'clothes' => $rows['clothes'],
+           
+  // 'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -217,7 +239,14 @@ elseif($postjson['aksi'] == "load_recommend"){
             'user_lname'    => $rows['user_lname'],
             'pantry_name'     => $rows['pantry_name'],
             'user_contact' => $rows['user_contact'],
-            'list_of_items' => $rows['list_of_items'],
+            'noodles' => $rows['noodles'],
+            'delata' => $rows['delata'],
+            'vegetables' => $rows['vegetables'],
+            'fruits' => $rows['fruits'],
+            'medicines' => $rows['medicines'],
+            'hygiene_kits' => $rows['hygiene_kits'],
+            'clothes' => $rows['clothes'],
+         //   'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -616,7 +645,7 @@ elseif($postjson['aksi'] == "load_topdonors"){
 elseif($postjson['aksi'] == "search_category1"){
     $data = array();    
     $query = mysqli_query($mysqli, "SELECT users.user_fname, users.user_lname, community_pantry.* FROM community_pantry, users
-     WHERE community_pantry.user_id = users.user_id AND category_1 = 1 ORDER BY pantry_id DESC");
+     WHERE community_pantry.user_id = users.user_id AND noodles = 1 ORDER BY pantry_id DESC");
 
     while($rows = mysqli_fetch_array($query)){
         $data[]= array(
@@ -625,10 +654,15 @@ elseif($postjson['aksi'] == "search_category1"){
             'user_lname'    => $rows['user_lname'],
             'pantry_name'     => $rows['pantry_name'],
             'user_contact' => $rows['user_contact'],
-            'category_1' => $rows['category_1'],
-            'category_2' => $rows['category_2'],
-            'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+            'noodles' => $rows['noodles'],
+            'delata' => $rows['delata'],
+            'vegetables' => $rows['vegetables'],
+            'fruits' => $rows['fruits'],
+            'medicines' => $rows['medicines'],
+            'hygiene_kits' => $rows['hygiene_kits'],
+            'clothes' => $rows['clothes'],
+           
+         //   'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -662,7 +696,7 @@ elseif($postjson['aksi'] == "search_category2"){
             'category_1' => $rows['category_1'],
             'category_2' => $rows['category_2'],
             'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+          //  'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -696,7 +730,7 @@ elseif($postjson['aksi'] == "search_category3"){
             'category_1' => $rows['category_1'],
             'category_2' => $rows['category_2'],
             'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+           // 'list_of_items' => $rows['list_of_items'],
             'street_address' => $rows['street_address'],
             'barangay' => $rows['barangay'],
             'municipality' => $rows['municipality'],
@@ -815,14 +849,14 @@ elseif($postjson['aksi'] == "totalpantries"){
 
 elseif($postjson['aksi'] == "lprevmessage"){
     $data = array();    
-    $query = mysqli_query($mysqli, "SELECT * FROM messages WHERE donation_id = '$postjson[donation_id]'");
+    $query = mysqli_query($mysqli, "SELECT * FROM messages WHERE donation_id = '$postjson[donation_id]' ORDER BY message_id DESC");
 
     while($rows = mysqli_fetch_array($query)){
         $data[]= array(
             'message_id' => $rows['message_id'],
             'donation_id' => $rows['donation_id'],
             'message' => $rows['message'],
-            'created_at'   => $rows['created_at'],
+            'created_at'   => $rows['created_at']
          
         );
     }

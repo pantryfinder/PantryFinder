@@ -22,7 +22,7 @@ export class SendmessageownerPage implements OnInit {
   statusofdonate: string ="";
   user_fname: string ="";
   user_lname: string ="";
-
+  message_id: number;
  message: string = "";
  disabledButton;
   
@@ -49,7 +49,6 @@ export class SendmessageownerPage implements OnInit {
         this.loaddonors();
         this.lpm =[];
         this.loadpreviousmessage();
-        
       }
      
     });
@@ -154,9 +153,6 @@ export class SendmessageownerPage implements OnInit {
   }
   } 
 
-
-  
-  
   async presentToast(a){
     const toast = await this.toastCtrl.create({
       message : a,
@@ -193,8 +189,7 @@ export class SendmessageownerPage implements OnInit {
     return new Promise(resolve => {
       let data = {
         aksi: 'lprevmessage',
-        donation_id: this.donation_id,
-       
+        donation_id: this.donation_id
       }
 
       this.accsPrvdrs.postData(data, 'proses_api.php').subscribe((res:any)=>{
@@ -217,6 +212,19 @@ export class SendmessageownerPage implements OnInit {
       }) 
          
     });
+  }
+
+  async doRefresh(event){
+    const loader = await this.loadCtrl.create({
+      message: 'Please wait....',
+    });
+      loader.present();
+      this.lpm=[];
+     
+      this.loadpreviousmessage();
+
+      event.target.complete();
+      loader.dismiss();
   }
 
 }

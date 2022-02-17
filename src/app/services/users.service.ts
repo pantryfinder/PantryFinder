@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 export interface users {
   pantry_name: string;
-  list_of_items: string;
+ // list_of_items: string;
   longitude: string;
   latitude: string;
 }
@@ -15,8 +15,8 @@ export interface users {
 })
 export class UsersService {
 
-  private url = 'http://192.168.18.73/pantryfinder/api/map.php'
-
+  private url = 'http://139.59.182.21/pantryfinder/api/map.php'
+ // private url = 'http://localhost/pantryfinder/api/map.php'
 
   constructor(private http: HttpClient) { }
 

@@ -6,7 +6,7 @@ export interface recommendation {
   pantry_id: string;
   pantry_name: string; 
   phone_number: string;
-  list_of_items: string;
+ // list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;
@@ -23,8 +23,8 @@ export interface recommendation {
 })
 export class RecommendationService {
 //sql6.freemysqlhosting.net::3306
-  private url = 'http://192.168.18.73/pantryfinder/api/viewrecommendation.php'
-
+private url = 'http://139.59.182.21/pantryfinder/api/viewrecommendation.php'
+   //private url = 'http://localhost/pantryfinder/api/viewrecommendation.php'
   constructor(private http: HttpClient)  { }
 
   getRecommendation(): Observable<recommendation[]>{

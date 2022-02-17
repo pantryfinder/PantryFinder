@@ -14,7 +14,7 @@ export class UpdatepantryPage implements OnInit {
 
   pantry_name: string = "";
   user_contact: string = "";
-  list_of_items: string = "";
+ // list_of_items: string = "";
   street_address: string = "";
   barangay: string = "";
   municipality: string = "";
@@ -30,6 +30,14 @@ export class UpdatepantryPage implements OnInit {
   open_time: any;
   close_time: any;
   disabledButton;
+
+  noodles: string;
+  delata: string;
+  vegetables: string;
+  fruits:string;
+  medicines: string;
+  hygiene_kits: string;
+  clothes: string;
 
   constructor(private router:Router,
     private toastCtrl: ToastController,
@@ -60,10 +68,14 @@ export class UpdatepantryPage implements OnInit {
       this.accsPrvdrs.postData(body, 'update_pantry.php').subscribe((res:any)=>{
             this.pantry_name = res.result.pantry_name,
             this.user_contact= res.result.user_contact,
-            this.category_1= res.result.category_1,
-            this.category_2= res.result.category_2,
-            this.category_3= res.result.category_3,
-            this.list_of_items= res.result.list_of_items,
+            this.noodles= res.result.noodles,
+            this.delata= res.result.delata,
+            this.vegetables= res.result.vegetables,
+            this.fruits= res.result.fruits,
+            this.medicines= res.result.medicines,
+            this.hygiene_kits= res.result.hygiene_kits,
+            this.clothes= res.result.clothes,
+          //  this.list_of_items= res.result.list_of_items,
             this.street_address= res.result.street_address,
             this.barangay= res.result.barangay,
             this.municipality= res.result.municipality,
@@ -92,10 +104,14 @@ export class UpdatepantryPage implements OnInit {
            pantry_id: this.pantry_id,
             pantry_name:  this.pantry_name,
             user_contact:  this.user_contact,
-            category_1:  this.category_1,
-            category_2:  this.category_2,
-            category_3:  this.category_3,
-            list_of_items: this.list_of_items,
+            noodles:  this.noodles,
+            delata:  this.delata,
+            vegetables:  this.vegetables,
+            fruits:  this.fruits,
+            medicines:  this.medicines,
+            hygiene_kits:  this.hygiene_kits,
+            clothes:  this.clothes,
+          // list_of_items: this.list_of_items,
             street_address:this.street_address,
             barangay: this.barangay,
             municipality:this.municipality,
@@ -105,7 +121,7 @@ export class UpdatepantryPage implements OnInit {
             user_email: this.user_email,
             gcash_number: this.gcash_number,           
             status: this.status,
-            action: a
+            action: a,
           
         }
          this.accsPrvdrs.postData(body, 'update_pantry.php').subscribe((res:any)=>{
@@ -113,16 +129,18 @@ export class UpdatepantryPage implements OnInit {
               loader.dismiss();
               this.disabledButton = false;
               this.presentToast(a+res.msg);
-              this.router.navigate(['/mypantry']);
+              //this.router.navigate(['/mypantry']);
               
             }else {
-              loader.dismiss();
+              //loader.dismiss();
               this.disabledButton = false;
               this.presentAlert(res.msg,a);
             }
          }, (err) => {
           loader.dismiss();
-           this.disabledButton = false;          
+          this.presentToast(a);
+          this.router.navigate(['/mypantry']);
+         //  this.disabledButton = false;          
          });
        
       });

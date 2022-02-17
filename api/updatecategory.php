@@ -17,7 +17,8 @@ if($postjson['aksi'] == "update_category"){
             category_1 = '$postjson[category_1]',
             category_2 = '$postjson[category_2]',
             category_3 = '$postjson[category_3]',
-            list_of_items  = '$postjson[list_of_items]' WHERE pantry_id='$postjson[pantry_id]'
+            /*list_of_items  = '$postjson[list_of_items]' */
+            WHERE pantry_id='$postjson[pantry_id]'
 ");
    
     if($updt){
@@ -38,7 +39,7 @@ elseif($postjson['aksi'] == "load_pantry"){
             'category_1' => $rows['category_1'],
             'category_2' => $rows['category_2'],
             'category_3' => $rows['category_3'],
-            'list_of_items' => $rows['list_of_items'],
+           // 'list_of_items' => $rows['list_of_items'],
            
         );
     }

@@ -58,7 +58,7 @@
 
   <ion-item *ngFor = "let p of users">
     <br><br>
-    <ion-label > Number of Donors: <ion-badge>{{p.pantry_id}}</ion-badge> </ion-label>
+    <ion-label > Number of Donations: <ion-badge>{{p.pantry_id}}</ion-badge> </ion-label>
   </ion-item>
 
    <ion-button shape="round" expand="full" class="ion-padding" color="success" (click)="donate()" [disabled]="disabledButton"> Donate on <br> {{pantry_name}} </ion-button>

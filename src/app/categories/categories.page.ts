@@ -35,6 +35,15 @@ export class CategoriesPage implements OnInit {
   users = []
   recommends = []
 
+  noodles: string="";
+    delata: string="";
+    vegetables: string="";
+    fruits:string="";
+    medicines: string="";
+    hygiene_kits: string="";
+    clothes: string="";
+  
+
   datastorage: any;
   constructor(private modalCtrl: ModalController, private service: PantryService, private accsPrvdrs: AccessProviders, 
     private storage: Storage,  private router:Router, private loadingCtrl: LoadingController,

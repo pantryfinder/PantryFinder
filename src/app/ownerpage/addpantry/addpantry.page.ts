@@ -19,7 +19,7 @@ export class AddpantryPage implements OnInit {
   form: FormGroup;
   pantry_name: string = "";
   user_contact: string = "";
-  list_of_items: string = "";
+//  list_of_items: string = "";
   street_address: string = "";
   barangay: string = "";
   municipality: string = "";
@@ -40,6 +40,15 @@ export class AddpantryPage implements OnInit {
   user_email: string = "";
   disabledButton;
   datastorage: any;
+
+  noodles: any;
+  delata: any;
+  vegetables: any;
+  fruits:any;
+  medicines: any;
+  hygiene_kits: any;
+  clothes: any;
+
 
  
 
@@ -94,8 +103,8 @@ export class AddpantryPage implements OnInit {
       this.presentToast('Please enter your Pantry Name');
   }else if(this.user_contact==""){
       this.presentToast('Please enter your Phone Number');
-  }else if(this.list_of_items==""){
-    this.presentToast('Please enter your List of Items');
+  //}else if(this.list_of_items==""){
+  //  this.presentToast('Please enter your List of Items');
   }else if(this.street_address==""){
     this.presentToast('Please enter your Street Address');
   }else if(this.barangay==""){
@@ -130,10 +139,14 @@ export class AddpantryPage implements OnInit {
             user_id: this.user_id,
             pantry_name:  this.pantry_name,
             user_contact:  this.user_contact,
-            category_1: this.category_1,
-            category_2: this.category_2,
-            category_3: this.category_3,
-            list_of_items: this.list_of_items,
+            noodles: this.noodles,
+            delata: this.delata,
+            vegetables: this. vegetables,
+            fruits: this. fruits,
+            medicines: this.medicines,
+            hygiene_kits: this.hygiene_kits,
+            clothes: this.clothes,
+           // list_of_items: this.list_of_items,
             latitude: this.latitude,
             longitude: this.longitude,
             street_address:this.street_address,

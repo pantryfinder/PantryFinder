@@ -204,7 +204,7 @@ export class DonorpantrydetailsPage implements OnInit {
                   this.disabledButton = false;
                   console.log(res);
                   this.presentToast(res.msg);
-                  //this.sendsms();
+                  this.sendsms();
                   this.router.navigate(['/donorpage/confirm']);
                 }else {
                   alert.dismiss();

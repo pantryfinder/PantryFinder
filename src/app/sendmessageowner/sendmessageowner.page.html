@@ -8,24 +8,40 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  
+
 <br>
   <ion-item *ngFor = "let p of users">
     To: {{p.user_fname}} {{p.user_lname}} <br>
    
   </ion-item>
+
 <br>
-
   <ion-item>
-     
     <ion-textarea placeholder="Enter your message..." clearInput value= "" [(ngModel)]="message"></ion-textarea>
-
     </ion-item>
-  
     <ion-button shape="round" expand="block" class="ion-padding" color="success" (click)="sendmessage('Success')">Send</ion-button>
-
+<br>
     <ion-card> 
       <ion-item *ngFor ="let l of lpm">
-        Your previous message: {{l.message}}
+        <ion-label no-lines>
+          <div class="innermsg-right"> 
+            <ion-label text-wrap> {{l.message}} </ion-label>
+            <ion-label>  <p style="font-size: 10px;">{{l.created_at}}</p>  </ion-label>      
+         
+          </div>
+        </ion-label>
       </ion-item>
     </ion-card>
+
 </ion-content>

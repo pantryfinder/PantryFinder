@@ -20,7 +20,7 @@ export class ListofpantryPage implements OnInit {
   pantry_id: number;
   pantry_name: string;
   user_contact: string;
-  list_of_items: string;
+ // list_of_items: string;
   street_address: string;
   barangay: string;
   municipality: string;
@@ -36,6 +36,14 @@ export class ListofpantryPage implements OnInit {
   user_id: number;
   users = []
   recommends = []
+  
+  noodles: string="";
+  delata: string="";
+  vegetables: string="";
+  fruits:string="";
+  medicines: string="";
+  hygiene_kits: string="";
+  clothes: string="";
 
   datastorage: any;
 

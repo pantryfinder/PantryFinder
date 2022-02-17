@@ -39,23 +39,21 @@
 
       <ion-item>
         <ion-icon name="list-outline"></ion-icon>   &nbsp;
-        <ion-chip *ngIf="category_1!=0" shape="round" expand="block" class="ion-padding" color="success">Foods</ion-chip>
-        <ion-chip *ngIf="category_1==0" shape="round" expand="block" class="ion-padding" disabled="true">Foods</ion-chip>
-  
-        <ion-chip *ngIf="category_2!=0" shape="round" expand="block" class="ion-padding" color="success">Clothes</ion-chip>
-        <ion-chip *ngIf="category_2==0" shape="round" expand="block" class="ion-padding" disabled="true">Clothes</ion-chip>
-  
-        <ion-chip *ngIf="category_3!=0" shape="round" expand="block" class="ion-padding" color="success">Medicine</ion-chip>
-        <ion-chip *ngIf="category_3==0" shape="round" expand="block" class="ion-padding" disabled="true">Medicine</ion-chip>
-  
-      </ion-item>
-      
-      <ion-item>
-       <ion-icon style="width: 60px;"></ion-icon>  &nbsp;
-            {{list_of_items}} 
-      </ion-item>
+       
+        <ion-chip *ngIf="noodles==1" shape="round" expand="block" class="ion-padding" color="success">Noodles</ion-chip>      
+        <ion-chip *ngIf="delata==1" shape="round" expand="block" class="ion-padding" color="success">De Lata</ion-chip>     
+        <ion-chip *ngIf="vegetables==1" shape="round" expand="block" class="ion-padding" color="success">Vegetables</ion-chip>
+        </ion-item>
 
+        <ion-item>
+        <ion-chip *ngIf="fruits==1" shape="round" expand="block" class="ion-padding" color="success">Fruits</ion-chip>
+        <ion-chip *ngIf="medicines==1" shape="round" expand="block" class="ion-padding" color="success">Medicine</ion-chip>
+        <ion-chip *ngIf="hygiene_kits==1" shape="round" expand="block" class="ion-padding" color="success">Hygiene Kits</ion-chip>
+        <ion-chip *ngIf="clothes==1" shape="round" expand="block" class="ion-padding" color="success">Clothes</ion-chip>
+      </ion-item>
+     
       <ion-item>
+
         <ion-icon name="location-outline"></ion-icon>   &nbsp;
         <ion-label>{{street_address}} {{barangay}} {{municipality}} {{province}}</ion-label>
       </ion-item>
@@ -92,16 +90,14 @@
 
     <ion-list>
       <div class="user">
-    
-     <ion-label style="font-size: 16px;">Comment:</ion-label> 
        
     <ion-item>
-      <ion-label position="floating">First Name(Optional)</ion-label>
+      <ion-label position="floating">First Name of Pantry Seeker (Optional)</ion-label>
       <ion-input clearInput value= "" [(ngModel)]="first_name"></ion-input>
     </ion-item>
     
     <ion-item>
-      <ion-label position="floating">Last Name(Optional)</ion-label>
+      <ion-label position="floating">Last Name of Pantry Seeker (Optional)</ion-label>
       <ion-input clearInput value= "" [(ngModel)]="last_name"></ion-input>
     </ion-item>
     <ion-item>
