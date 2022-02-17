@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
     /**
      * GIT DEPLOYMENT SCRIPT
@@ -42,7 +41,7 @@
     </div>
 </div>
 </body>
-=======
+
 <?php
     /**
      * GIT DEPLOYMENT SCRIPT
@@ -86,5 +85,5 @@
     </div>
 </div>
 </body>
->>>>>>> 78285871255b60813a9c100986130daff7d4909c
+
 </html>
