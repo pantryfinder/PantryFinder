@@ -25,9 +25,9 @@
 //define('DB_PASSWORD', '6fT9NAlbjy');
 //define('DB_HOST', 'sql6.freemysqlhosting.net');
 
-define('DB_NAME', 'sql6473472');
-define('DB_USER', 'sql6473472');
-define('DB_PASSWORD', 'lkaqcHULVz');
+define('DB_NAME', 'sql6476768');
+define('DB_USER', 'sql6476768');
+define('DB_PASSWORD', 'UgcWzryWmw');
 define('DB_HOST', 'sql6.freemysqlhosting.net');
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
